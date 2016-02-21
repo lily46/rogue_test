@@ -1,0 +1,36 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameManager.cs" Line="39" Column="27" />
+      <File FileName="Assets/Scripts/BoardManager.cs" Line="126" Column="1" />
+      <File FileName="Assets/Scripts/Loader.cs" Line="4" Column="17" />
+      <File FileName="Assets/Scripts/Wall.cs" Line="4" Column="11" />
+      <File FileName="Assets/Scripts/Player.cs" Line="163" Column="4" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="4" Column="17" />
+      <File FileName="Assets/Scripts/MovingObject.cs" Line="4" Column="17" />
+      <File FileName="Assets/Scripts/SoundManager.cs" Line="4" Column="17" />
+      <File FileName="Assets/SocketIO/Scripts/Test/TestSocketIO.cs" Line="30" Column="19" />
+      <File FileName="Assets/SocketIO/Readme.txt" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RougeA" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True" />
+            <Node name="Assembly-CSharp-Editor" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="RougeA" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
