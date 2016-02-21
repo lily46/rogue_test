@@ -25,19 +25,26 @@ namespace MyGame
 		private bool doingSetup = true;							//Boolean to check if we're setting up board, prevent Player from moving during setup.
 		
 		SocketIOClient.Client socket;		
+		public int sended = 0;
 		
 		//Awake is always called before any Start functions
 		void Awake()
 		{
 			Debug.Log ("start");
-
-			socket = new SocketIOClient.Client ("http://127.0.0.1:3000/"); 
+			sended = 0;
+			// socket = new SocketIOClient.Client ("http://127.0.0.1:3000/"); 
+			socket = new SocketIOClient.Client ("https://unity-server.herokuapp.com/"); 
 
 			socket.On ("connect", (fn) => {
 				Debug.Log("connect - socket");
-				socket.Emit("nuwaaaa", System.DateTime.Now.ToString());
-				socket.Send("nuwaaa");
+
+				Dictionary<string, string> args = new Dictionary<string, string>();
+				args.Add("scene", "game_start");
+				socket.Emit("emit", args);
 			});
+			 
+			//socket.Send("nuwaaa");
+
 
 			socket.On ("message:receive", (data) => {
 				Debug.Log(data.Json.ToJsonString());
@@ -152,6 +159,15 @@ namespace MyGame
 			
 			//Disable this GameManager.
 			enabled = false;
+
+			if(sended == 0){
+				Dictionary<string, string> args = new Dictionary<string, string>();
+				args.Add("scene", "game_over");
+				args.Add ("level", level.ToString());
+				socket.Emit("emit", args);
+			}
+			++sended;
+			print ("dead");
 		}
 		
 		//Coroutine to move enemies in sequence.
@@ -184,6 +200,11 @@ namespace MyGame
 			
 			//Enemies are done moving, set enemiesMoving to false.
 			enemiesMoving = false;
+		}
+
+		private void OnApplicationQuit (){
+			print ("end of game");
+			socket.Close ();
 		}
 	}
 }
